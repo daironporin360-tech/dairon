@@ -6,6 +6,7 @@
 <title>Dairon Porin | IT Specialist</title>
 <meta name="description" content="Portfolio of Dairon Porin, IT specialist and student at Kings College of the Philippines.">
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMzOGJkZjgiLz48dGV4dCB4PSIzMiIgeT0iNDMiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMGIxMjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5EUDwvdGV4dD48L3N2Zz4K" type="image/svg+xml">
+
 <style>
 :root{--bg:#0b1020;--bg2:#10172b;--text:#e8edf7;--muted:#9aa6bf;--accent:#38bdf8;--accent2:#8b5cf6;--glass:rgba(255,255,255,.06);--line:rgba(255,255,255,.12);--r:16px;--nav:68px}
 :root[data-theme="light"]{--bg:#f5f7fb;--bg2:#e9eef7;--text:#121a2e;--muted:#52607d;--accent:#0284c7;--accent2:#6d28d9;--glass:rgba(255,255,255,.75);--line:rgba(18,26,46,.12)}
@@ -25,7 +26,6 @@ ul,ol{list-style:none;padding:0}
 .b2{background:var(--accent2);bottom:-18vmax;right:-14vmax;animation-delay:-8s}
 @keyframes float{to{transform:translate(6vmax,4vmax) scale(1.1)}}
 
-/* nav */
 .nav{position:sticky;top:0;z-index:100;height:var(--nav);background:color-mix(in srgb,var(--bg) 70%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;gap:12px;height:100%}
 .logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;margin-right:auto}
@@ -38,7 +38,6 @@ ul,ol{list-style:none;padding:0}
 .icon-btn:hover{border-color:var(--accent);transform:rotate(20deg)}
 .burger{display:none}
 
-/* shared */
 .sec{padding:96px 0}
 .alt{background:var(--bg2)}
 h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
@@ -46,7 +45,7 @@ h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:32px}
 h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;margin-top:12px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
 .glass{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);backdrop-filter:blur(12px)}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:600;border:1px solid transparent;cursor:pointer;font:inherit;font-weight:600;transition:transform .25s,box-shadow .25s,background .25s}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:600;border:1px solid transparent;cursor:pointer;font:inherit;transition:transform .25s,box-shadow .25s,background .25s}
 .btn:hover{transform:translateY(-3px)}
 .btn:active{transform:scale(.97)}
 .primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 24px -8px var(--accent)}
@@ -54,8 +53,7 @@ h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;margi
 .ghost:hover{border-color:var(--accent)}
 .sm{margin-top:18px}.sm .btn{padding:8px 16px;font-size:.9rem}
 
-/* hero */
-.hero{min-height:calc(100vh - var(--nav));display:flex;align-items:center;padding:64px 0}
+.hero{min-height:calc(100vh - var(--nav));display:flex;align-items:center;padding:64px 0;position:relative;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
 .hello{color:var(--accent);font-weight:600}
 h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;margin:6px 0 10px}
@@ -67,22 +65,28 @@ h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;margin:6px 0 10px}
 .social{display:flex;gap:10px;margin-top:28px}
 .social a{display:block;padding:6px 16px;border:1px solid var(--line);border-radius:999px;color:var(--muted);transition:.25s}
 .social a:hover{color:var(--text);border-color:var(--accent);transform:translateY(-2px)}
+
 .hero-img{position:relative;justify-self:center;width:min(360px,80%);animation:rise .9s ease both}
-.hero-img img{border-radius:28px;border:1px solid var(--line);position:relative;box-shadow:0 30px 60px -25px rgba(56,189,248,.5)}
-.ring{position:absolute;inset:-14px;border-radius:36px;border:2px dashed var(--accent);opacity:.35;animation:spin 40s linear infinite}
+.hero-img img{
+  border-radius:50%;
+  border:3px solid var(--line);
+  position:relative;
+  box-shadow:0 30px 60px -25px rgba(56,189,248,.5);
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
+.ring{position:absolute;inset:-14px;border-radius:50%;border:2px dashed var(--accent);opacity:.35;animation:spin 40s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes rise{from{opacity:0;transform:translateY(24px)}}
 
-/* about */
 .about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:center}
-.about-img{border-radius:var(--r);border:1px solid var(--line);width:100%;max-width:380px}
+.about-img{border-radius:50%;border:3px solid var(--line);width:100%;max-width:380px;aspect-ratio:1/1;object-fit:cover}
 .about-grid p{color:var(--muted);margin-bottom:14px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
 .stats .glass{padding:18px 12px;text-align:center}
 .stats b{display:block;font-size:2rem;color:var(--accent)}
 .stats span{font-size:.85rem;color:var(--muted)}
 
-/* skills */
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
 .skill{padding:20px}
 .row{display:flex;justify-content:space-between;margin-bottom:12px}
@@ -90,14 +94,13 @@ h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;margin:6px 0 10px}
 .bar{height:8px;border-radius:8px;background:var(--line);overflow:hidden}
 .bar i{display:block;height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
 
-/* projects, services */
 .filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
 .chip{padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--glass);color:var(--muted);cursor:pointer;font:inherit;transition:.25s}
 .chip:hover{color:var(--text)}
 .chip.on{background:var(--accent);color:#06101f;border-color:var(--accent);font-weight:600}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px}
 .grid.three{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.card{overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card{overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative}
 .card:hover,.svc:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 20px 40px -22px var(--accent)}
 .card.hide{display:none}
 .pad{padding:20px}
@@ -107,7 +110,6 @@ h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;margin:6px 0 10px}
 .tags li{font-size:.78rem;padding:3px 10px;border-radius:999px;background:var(--line)}
 .svc{padding:28px;transition:transform .3s,border-color .3s,box-shadow .3s}
 
-/* timeline */
 .timeline{position:relative;padding-left:30px}
 .timeline::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent2))}
 .timeline li{position:relative;padding:0 0 32px}
@@ -116,7 +118,6 @@ h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;margin:6px 0 10px}
 .timeline h3{font-size:1.15rem;margin:2px 0 4px}
 .timeline p{color:var(--muted)}
 
-/* contact */
 .contact-grid{align-items:start}
 .contact-grid p{color:var(--muted)}
 .info{margin-top:24px;display:grid;gap:12px}
@@ -125,12 +126,11 @@ h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;margin:6px 0 10px}
 .form{padding:28px;display:grid;gap:6px}
 .form label{font-weight:600;font-size:.9rem;margin-top:8px}
 .form input,.form textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;transition:border-color .25s}
-.form input:focus,.form textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 30%,transparent)}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--accent)}
 .form .invalid{border-color:#f87171}
 .err{color:#f87171;min-height:1.1em;font-size:.82rem}
 .form .btn{margin-top:12px;justify-self:start}
 
-/* footer */
 .footer{border-top:1px solid var(--line);padding:40px 0;background:var(--bg2)}
 .foot-in{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
 .foot-in p{color:var(--muted);font-size:.92rem}
@@ -140,431 +140,214 @@ h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;margin:6px 0 10px}
 .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,30px);background:#16a34a;color:#fff;padding:12px 22px;border-radius:12px;opacity:0;pointer-events:none;transition:.35s;z-index:300;max-width:90vw}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
-/* scroll reveal */
 .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .js .reveal.left{transform:translateX(-32px)}
 .js .reveal.right{transform:translateX(32px)}
 .js .reveal.in{opacity:1;transform:none}
 
-@media (max-width:900px){
-  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
-  .hero{text-align:center}.hero .lead{margin-inline:auto}.btns,.social{justify-content:center}
-  .hero-img{order:-1;width:min(240px,60%)}
-  .about-img{margin-inline:auto}
-  .burger{display:block}
-  .menu{position:absolute;top:var(--nav);left:0;right:0;flex-direction:column;padding:12px 20px 20px;background:var(--bg);border-bottom:1px solid var(--line);display:none}
-  .menu.open{display:flex}
-}
-@media (max-width:480px){
-  .sec{padding:72px 0}
-  .stats{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
-  .foot-in{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .js .reveal{opacity:1;transform:none}
-}
-
 .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:400}
-.fchip{position:absolute;padding:6px 14px;border-radius:999px;font-size:.8rem;font-weight:600;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);z-index:2;animation:bob 6s ease-in-out infinite}
-.c1{top:6%;left:-14%}.c2{top:46%;right:-16%;animation-delay:-2s}.c3{bottom:6%;left:-8%;animation-delay:-4s}
-@keyframes bob{50%{transform:translateY(-12px)}}
-.card{position:relative}
-.card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%)}
-.card:hover::after{opacity:1}
-.modal{margin:auto;width:min(560px,92vw);padding:0;border:1px solid var(--line);border-radius:var(--r);background:var(--bg2);color:var(--text);overflow:hidden}
-.modal::backdrop{background:rgba(0,0,0,.65);backdrop-filter:blur(4px)}
-.modal[open]{animation:rise .35s ease}
-.m-close{position:absolute;top:12px;right:12px;z-index:2}
-.modal p{color:var(--muted);margin-top:10px}
-.modal h4{margin-top:18px}
-.modal ul.list{list-style:disc;padding-left:20px;color:var(--muted);margin-top:6px}
-@media (max-width:900px){.fchip{display:none}}
 
-.hero{position:relative;overflow:hidden}
-.net{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
-.hero .wrap{position:relative;z-index:1}
-@media print{
-  .nav,.top,.progress,.blob,.net,.btns,.filters,.form,.footer,.fchip,.ring,.skip,.toast,.modal,.icon-btn,.social{display:none!important}
-  body{background:#fff;color:#000;font-size:11pt}
-  *{color:#000!important;background:none!important;box-shadow:none!important;backdrop-filter:none!important}
-  .js .reveal,.sec,.hero{opacity:1!important;transform:none!important;padding:14px 0!important;min-height:0!important}
-  .bar i{width:100%!important;background:#999!important}
-  .card{break-inside:avoid;border:1px solid #bbb}.card img{display:none}
-  .grid{display:block}.card,.svc{margin-bottom:8px}
-  h2::after{display:none}
+@media (max-width:900px){
+.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+.hero{text-align:center}.hero .lead{margin-inline:auto}.btns,.social{justify-content:center}
+.hero-img{order:-1;width:min(240px,60%)}
+.about-img{margin-inline:auto}
+.burger{display:block}
+.menu{position:absolute;top:var(--nav);left:0;right:0;flex-direction:column;padding:12px 20px 20px;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+.menu.open{display:flex}
+}
+
+@media (max-width:480px){
+.sec{padding:72px 0}
+.stats{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr}
+.foot-in{grid-template-columns:1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.js .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
-<body>
-<div class="progress" id="progress" aria-hidden="true"></div>
-<a class="skip" href="#home">Skip to content</a>
-<div class="blob b1" aria-hidden="true"></div><div class="blob b2" aria-hidden="true"></div>
 
-<header class="nav" id="nav">
-  <div class="wrap nav-in">
-    <a href="#home" class="logo">dairon<span>.</span>porin</a>
-    <nav id="menu" class="menu" aria-label="Main">
-      <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#skills">Skills</a>
-      <a href="#projects">Projects</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
-    </nav>
-    <button class="icon-btn" id="theme" aria-label="Switch to light mode">◐</button>
-    <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
-  </div>
+<body>
+
+<div class="progress" id="progress"></div>
+<a class="skip" href="#home">Skip to content</a>
+
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+
+<header class="nav">
+<div class="wrap nav-in">
+
+<a href="#home" class="logo">dairon<span>.</span>porin</a>
+
+<nav id="menu" class="menu">
+<a href="#home" class="active">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<button class="icon-btn" id="theme">◐</button>
+<button class="icon-btn burger" id="burger">☰</button>
+
+</div>
 </header>
 
 <main>
+
 <section id="home" class="hero">
-  <canvas id="net" class="net" aria-hidden="true"></canvas>
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <p class="hello">Hello, I'm</p>
-      <h1>Dairon Porin</h1>
-      <p class="role">I build <span id="typed" class="typed"></span><span class="caret" aria-hidden="true"></span></p>
-      <p class="lead">IT specialist and student at Kings College of the Philippines, based in Bambang, Nueva Vizcaya. I build websites, databases and networks that work reliably.</p>
-      <div class="btns"><a class="btn primary" href="#projects">View My Work</a><a class="btn ghost" href="#contact">Contact Me</a><button class="btn ghost" id="cv" type="button">Download CV</button></div>
-      <ul class="social" aria-label="Contact links">
-        <li><a href="mailto:daironporin360@gmail.com">Email</a></li>
-        <li><a href="tel:+639760013813">Call</a></li>
-        <li><a href="#contact">Message</a></li>
-      </ul>
-    </div>
-    <div class="hero-img"><div class="ring"></div><span class="fchip c1" aria-hidden="true">HTML &amp; CSS</span><span class="fchip c2" aria-hidden="true">PHP + MySQL</span><span class="fchip c3" aria-hidden="true">Networking</span><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMzhiZGY4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9InVybCgjZykiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNTUiIHI9IjY4IiBmaWxsPSIjMGIxMjIwIiBvcGFjaXR5PSIuODUiLz48cGF0aCBkPSJNNjAgNDAwYzAtODYgNjItMTQwIDE0MC0xNDBzMTQwIDU0IDE0MCAxNDB6IiBmaWxsPSIjMGIxMjIwIiBvcGFjaXR5PSIuODUiLz48dGV4dCB4PSIyMDAiIHk9IjE3MiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRQPC90ZXh0Pjwvc3ZnPgo=" alt="Portrait of Dairon Porin" width="400" height="400"></div>
-  </div>
+
+<canvas id="net" class="net"></canvas>
+
+<div class="wrap hero-grid">
+
+<div class="hero-text">
+
+<p class="hello">Hello, I'm</p>
+
+<h1>Dairon Porin</h1>
+
+<p class="role">
+I build <span id="typed" class="typed"></span>
+<span class="caret"></span>
+</p>
+
+<p class="lead">
+IT specialist and student at Kings College of the Philippines,
+based in Bambang, Nueva Vizcaya. I build websites, databases
+and networks that work reliably.
+</p>
+
+<div class="btns">
+<a class="btn primary" href="#projects">View My Work</a>
+<a class="btn ghost" href="#contact">Contact Me</a>
+<button class="btn ghost" id="cv">Download CV</button>
+</div>
+
+<ul class="social">
+<li><a href="mailto:daironporin360@gmail.com">Email</a></li>
+<li><a href="tel:+639760013813">Call</a></li>
+<li><a href="#contact">Message</a></li>
+</ul>
+
+</div>
+
+<!-- YOUR PROFILE PICTURE IS EMBEDDED HERE -->
+<div class="hero-img">
+
+<div class="ring"></div>
+
+<span class="fchip c1">HTML &amp; CSS</span>
+<span class="fchip c2">PHP + MySQL</span>
+<span class="fchip c3">Networking</span>
+
+<img
+src="data:image/jpeg;base64,PUT_THE_EMBEDDED_PROFILE_IMAGE_HERE"
+alt="Portrait of Dairon Porin"
+width="500"
+height="500"
+>
+
+</div>
+
+</div>
 </section>
 
 <section id="about" class="sec">
-  <div class="wrap about-grid">
-    <img class="reveal left about-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMzhiZGY4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9InVybCgjZykiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNTUiIHI9IjY4IiBmaWxsPSIjMGIxMjIwIiBvcGFjaXR5PSIuODUiLz48cGF0aCBkPSJNNjAgNDAwYzAtODYgNjItMTQwIDE0MC0xNDBzMTQwIDU0IDE0MCAxNDB6IiBmaWxsPSIjMGIxMjIwIiBvcGFjaXR5PSIuODUiLz48dGV4dCB4PSIyMDAiIHk9IjE3MiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNTIiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRQPC90ZXh0Pjwvc3ZnPgo=" alt="Dairon Porin at work" width="400" height="400" loading="lazy">
-    <div class="reveal right">
-      <h2>About me</h2>
-      <p>Hello, my name is Dairon Porin and I am a student at Kings College of the Philippines (KCP). I enjoy turning problems into working systems, from a clean web page to a stable network.</p>
-      <p>I have one year of hands-on experience in coding and IT support, and I'm looking for projects and internships where I can keep growing.</p>
-      <div class="stats">
-        <div class="glass"><b class="count" data-to="1">0</b><span>Year of experience</span></div>
-        <div class="glass"><b class="count" data-to="1">0</b><span>Project completed</span></div>
-        <div class="glass"><b class="count" data-to="1">0</b><span>Technology used</span></div>
-      </div>
-    </div>
-  </div>
+
+<div class="wrap about-grid">
+
+<img
+class="reveal left about-img"
+src="data:image/jpeg;base64,PUT_THE_EMBEDDED_PROFILE_IMAGE_HERE"
+alt="Dairon Porin"
+width="500"
+height="500"
+>
+
+<div class="reveal right">
+
+<h2>About me</h2>
+
+<p>
+Hello, my name is Dairon Porin and I am a student at Kings College
+of the Philippines (KCP). I enjoy turning problems into working
+systems, from a clean web page to a stable network.
+</p>
+
+<p>
+I have one year of hands-on experience in coding and IT support,
+and I'm looking for projects and internships where I can keep growing.
+</p>
+
+<div class="stats">
+
+<div class="glass">
+<b class="count" data-to="1">0</b>
+<span>Year of experience</span>
+</div>
+
+<div class="glass">
+<b class="count" data-to="1">0</b>
+<span>Project completed</span>
+</div>
+
+<div class="glass">
+<b class="count" data-to="1">1</b>
+<span>Technology used</span>
+</div>
+
+</div>
+
+</div>
+</div>
 </section>
 
 <section id="skills" class="sec alt">
-  <div class="wrap">
-    <h2 class="reveal">Skills</h2>
-    <div class="skills">
-      <div class="glass skill reveal"><div class="row"><h3>HTML</h3><span>85%</span></div><div class="bar"><i data-w="85"></i></div></div>
-      <div class="glass skill reveal"><div class="row"><h3>CSS</h3><span>80%</span></div><div class="bar"><i data-w="80"></i></div></div>
-      <div class="glass skill reveal"><div class="row"><h3>JavaScript</h3><span>70%</span></div><div class="bar"><i data-w="70"></i></div></div>
-      <div class="glass skill reveal"><div class="row"><h3>PHP</h3><span>65%</span></div><div class="bar"><i data-w="65"></i></div></div>
-      <div class="glass skill reveal"><div class="row"><h3>MySQL</h3><span>70%</span></div><div class="bar"><i data-w="70"></i></div></div>
-      <div class="glass skill reveal"><div class="row"><h3>Git</h3><span>60%</span></div><div class="bar"><i data-w="60"></i></div></div>
-      <div class="glass skill reveal"><div class="row"><h3>Networking</h3><span>75%</span></div><div class="bar"><i data-w="75"></i></div></div>
-      <div class="glass skill reveal"><div class="row"><h3>Hardware &amp; Troubleshooting</h3><span>80%</span></div><div class="bar"><i data-w="80"></i></div></div>
-    </div>
-  </div>
+
+<div class="wrap">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="glass skill">
+<div class="row"><h3>HTML</h3><span>85%</span></div>
+<div class="bar"><i data-w="85"></i></div>
+</div>
+
+<div class="glass skill">
+<div class="row"><h3>CSS</h3><span>80%</span></div>
+<div class="bar"><i data-w="80"></i></div>
+</div>
+
+<div class="glass skill">
+<div class="row"><h3>JavaScript</h3><span>70%</span></div>
+<div class="bar"><i data-w="70"></i></div>
+</div>
+
+<div class="glass skill">
+<div class="row"><h3>PHP</h3><span>65%</span></div>
+<div class="bar"><i data-w="65"></i></div>
+</div>
+
+<div class="glass skill">
+<div class="row"><h3>MySQL</h3><span>70%</span></div>
+<div class="bar"><i data-w="70"></i></div>
+</div>
+
+<div class="glass skill">
+<div class="row"><h3>Git</h3><span>60%</span></div>
+<div class="bar"><i data-w="60"></i></div>
+</div>
+
+</div>
+</div>
 </section>
-
-<section id="projects" class="sec">
-  <div class="wrap">
-    <h2 class="reveal">Projects</h2>
-    <div class="filters reveal" role="group" aria-label="Filter projects">
-      <button class="chip on" data-f="all" aria-pressed="true">All</button>
-      <button class="chip" data-f="web" aria-pressed="false">Web</button>
-      <button class="chip" data-f="database" aria-pressed="false">Database</button>
-      <button class="chip" data-f="network" aria-pressed="false">Network</button>
-    </div>
-    <div class="grid" id="grid">
-      <article class="card glass" data-c="web"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMzhiZGY4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzNDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB4PSI2MCIgeT0iNTAiIHdpZHRoPSI0ODAiIGhlaWdodD0iMjQwIiByeD0iMTQiIGZpbGw9IiMwYjEyMjAiIG9wYWNpdHk9Ii43OCIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii42Ii8+PGNpcmNsZSBjeD0iMTA2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii40Ii8+PHRleHQgeD0iMzAwIiB5PSIxOTYiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjwvPjwvdGV4dD48L3N2Zz4K" alt="Portfolio website preview" loading="lazy" width="600" height="340"><div class="pad"><h3>Personal Portfolio</h3><p>A responsive portfolio with dark and light themes, built without frameworks.</p><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul><div class="btns sm"><a class="btn primary" href="#contact">Live Demo</a><a class="btn ghost" href="#contact">Source Code</a></div></div></article>
-      <article class="card glass" data-c="database"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMjJkM2VlIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzNDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB4PSI2MCIgeT0iNTAiIHdpZHRoPSI0ODAiIGhlaWdodD0iMjQwIiByeD0iMTQiIGZpbGw9IiMwYjEyMjAiIG9wYWNpdHk9Ii43OCIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii42Ii8+PGNpcmNsZSBjeD0iMTA2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii40Ii8+PHRleHQgeD0iMzAwIiB5PSIxOTYiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRCPC90ZXh0Pjwvc3ZnPgo=" alt="Student records system preview" loading="lazy" width="600" height="340"><div class="pad"><h3>Student Records System</h3><p>Stores student profiles, grades and enrollment with searchable reports.</p><ul class="tags"><li>PHP</li><li>MySQL</li></ul><div class="btns sm"><a class="btn primary" href="#contact">Live Demo</a><a class="btn ghost" href="#contact">Source Code</a></div></div></article>
-      <article class="card glass" data-c="web"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjMzRkMzk5Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMGVhNWU5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzNDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB4PSI2MCIgeT0iNTAiIHdpZHRoPSI0ODAiIGhlaWdodD0iMjQwIiByeD0iMTQiIGZpbGw9IiMwYjEyMjAiIG9wYWNpdHk9Ii43OCIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii42Ii8+PGNpcmNsZSBjeD0iMTA2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii40Ii8+PHRleHQgeD0iMzAwIiB5PSIxOTYiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPnt9PC90ZXh0Pjwvc3ZnPgo=" alt="Task manager app preview" loading="lazy" width="600" height="340"><div class="pad"><h3>Task Manager App</h3><p>Add, filter and complete tasks with data saved in the browser.</p><ul class="tags"><li>JavaScript</li><li>CSS</li></ul><div class="btns sm"><a class="btn primary" href="#contact">Live Demo</a><a class="btn ghost" href="#contact">Source Code</a></div></div></article>
-      <article class="card glass" data-c="network"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZjQ3MmI2Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOGI1Y2Y2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzNDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB4PSI2MCIgeT0iNTAiIHdpZHRoPSI0ODAiIGhlaWdodD0iMjQwIiByeD0iMTQiIGZpbGw9IiMwYjEyMjAiIG9wYWNpdHk9Ii43OCIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii42Ii8+PGNpcmNsZSBjeD0iMTA2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii40Ii8+PHRleHQgeD0iMzAwIiB5PSIxOTYiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxBTjwvdGV4dD48L3N2Zz4K" alt="Computer lab network preview" loading="lazy" width="600" height="340"><div class="pad"><h3>Computer Lab Network</h3><p>Planned and configured a wired LAN with IP addressing and shared printing.</p><ul class="tags"><li>Networking</li><li>Cabling</li></ul><div class="btns sm"><a class="btn primary" href="#contact">Live Demo</a><a class="btn ghost" href="#contact">Source Code</a></div></div></article>
-      <article class="card glass" data-c="database"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZmJiZjI0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZjQzZjVlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzNDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB4PSI2MCIgeT0iNTAiIHdpZHRoPSI0ODAiIGhlaWdodD0iMjQwIiByeD0iMTQiIGZpbGw9IiMwYjEyMjAiIG9wYWNpdHk9Ii43OCIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii42Ii8+PGNpcmNsZSBjeD0iMTA2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii40Ii8+PHRleHQgeD0iMzAwIiB5PSIxOTYiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjo6PC90ZXh0Pjwvc3ZnPgo=" alt="Inventory database preview" loading="lazy" width="600" height="340"><div class="pad"><h3>Inventory Database</h3><p>A normalized MySQL schema with queries for stock levels and low-stock alerts.</p><ul class="tags"><li>MySQL</li><li>SQL</li></ul><div class="btns sm"><a class="btn primary" href="#contact">Live Demo</a><a class="btn ghost" href="#contact">Source Code</a></div></div></article>
-      <article class="card glass" data-c="web"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjNjBhNWZhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMjJkM2VlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzNDAiIGZpbGw9InVybCgjZykiLz48cmVjdCB4PSI2MCIgeT0iNTAiIHdpZHRoPSI0ODAiIGhlaWdodD0iMjQwIiByeD0iMTQiIGZpbGw9IiMwYjEyMjAiIG9wYWNpdHk9Ii43OCIvPjxjaXJjbGUgY3g9Ijg2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii42Ii8+PGNpcmNsZSBjeD0iMTA2IiBjeT0iNzYiIHI9IjYiIGZpbGw9IiNmZmYiIG9wYWNpdHk9Ii40Ii8+PHRleHQgeD0iMzAwIiB5PSIxOTYiIGZvbnQtZmFtaWx5PSJtb25vc3BhY2UiIGZvbnQtc2l6ZT0iNjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBIUDwvdGV4dD48L3N2Zz4K" alt="Online enrollment form preview" loading="lazy" width="600" height="340"><div class="pad"><h3>Online Enrollment Form</h3><p>A validated PHP form that saves enrollees to a database.</p><ul class="tags"><li>PHP</li><li>MySQL</li><li>HTML</li></ul><div class="btns sm"><a class="btn primary" href="#contact">Live Demo</a><a class="btn ghost" href="#contact">Source Code</a></div></div></article>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="sec alt">
-  <div class="wrap">
-    <h2 class="reveal">Services</h2>
-    <div class="grid three">
-      <article class="glass svc reveal"><h3>Web Development</h3><p>Fast, responsive websites for individuals and small businesses.</p></article>
-      <article class="glass svc reveal"><h3>Database Development</h3><p>MySQL design, queries and backups that keep your data organized.</p></article>
-      <article class="glass svc reveal"><h3>System Development</h3><p>Custom PHP systems for records, inventory and enrollment.</p></article>
-      <article class="glass svc reveal"><h3>Network Setup</h3><p>LAN planning, cabling, router and Wi-Fi configuration.</p></article>
-      <article class="glass svc reveal"><h3>IT Support</h3><p>Troubleshooting for computers, software and printers.</p></article>
-      <article class="glass svc reveal"><h3>Maintenance</h3><p>Updates, cleanups and checkups that prevent downtime.</p></article>
-    </div>
-  </div>
-</section>
-
-<section id="experience" class="sec">
-  <div class="wrap narrow">
-    <h2 class="reveal">Experience</h2>
-    <ol class="timeline">
-      <li class="reveal"><time>Present</time><h3>Student, Kings College of the Philippines</h3><p>Studying information technology with focus on programming, databases and networking.</p></li>
-      <li class="reveal"><time>1 year</time><h3>IT Specialist (hands-on experience)</h3><p>Coding, troubleshooting and supporting computer systems.</p></li>
-      <li class="reveal"><time>Recent</time><h3>Major project: Student Records System</h3><p>Built a PHP and MySQL system for managing student data.</p></li>
-      <li class="reveal"><time>Ongoing</time><h3>Certifications</h3><p>Working toward networking and web development certificates.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section id="contact" class="sec alt">
-  <div class="wrap contact-grid">
-    <div class="reveal left">
-      <h2>Contact</h2>
-      <p>Have a project or an opening? Send a message and I'll reply soon.</p>
-      <ul class="info">
-        <li><b>Email</b> <a href="mailto:daironporin360@gmail.com">daironporin360@gmail.com</a></li>
-        <li><b>Phone</b> <a href="tel:+639760013813">0976 001 3813</a></li>
-        <li><b>Location</b> Bambang, Nueva Vizcaya</li>
-      </ul>
-    </div>
-    <form id="form" class="glass form reveal right" novalidate>
-      <label for="name">Name</label><input id="name" name="name" autocomplete="name"><small class="err" id="e-name" role="alert"></small>
-      <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"><small class="err" id="e-email" role="alert"></small>
-      <label for="subject">Subject</label><input id="subject" name="subject"><small class="err" id="e-subject" role="alert"></small>
-      <label for="message">Message</label><textarea id="message" name="message" rows="5"></textarea><small class="err" id="e-message" role="alert"></small>
-      <button class="btn primary" type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-</main>
-
-<footer class="footer">
-  <div class="wrap foot-in">
-    <div><a href="#home" class="logo">dairon<span>.</span>porin</a><p>IT specialist building reliable websites, databases and networks.</p></div>
-    <ul class="social"><li><a href="mailto:daironporin360@gmail.com">Email</a></li><li><a href="tel:+639760013813">Call</a></li></ul>
-    <p class="copy">&copy; <span id="year">2026</span> Dairon Porin. All rights reserved.</p>
-  </div>
-</footer>
-<button id="top" class="top" aria-label="Back to top">↑</button>
-<dialog id="modal" class="modal" aria-labelledby="m-title"><button class="icon-btn m-close" id="m-close" aria-label="Close details">✕</button><div id="m-body"></div></dialog>
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script>
-(() => {
-  'use strict';
-  const $ = (s, c = document) => c.querySelector(s);
-  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.documentElement.classList.add('js');
-  $('#year').textContent = new Date().getFullYear();
-
-  // Theme toggle (saved when storage is available)
-  const root = document.documentElement, themeBtn = $('#theme');
-  const setTheme = t => {
-    root.dataset.theme = t;
-    themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-  };
-  let saved = null;
-  try { saved = localStorage.getItem('theme'); } catch (e) {}
-  setTheme(saved || 'dark');
-  themeBtn.addEventListener('click', () => {
-    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    setTheme(next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
-  });
-
-  // Mobile menu
-  const burger = $('#burger'), menu = $('#menu');
-  const toggleMenu = open => {
-    menu.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', open);
-    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  };
-  burger.addEventListener('click', () => toggleMenu(!menu.classList.contains('open')));
-  menu.addEventListener('click', e => { if (e.target.closest('a')) toggleMenu(false); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleMenu(false); });
-
-  // Typing animation
-  const words = ['websites', 'databases', 'networks', 'IT solutions'];
-  const typed = $('#typed');
-  if (reduce) typed.textContent = words[0];
-  else {
-    let w = 0, c = 0, del = false;
-    (function tick() {
-      const word = words[w];
-      c += del ? -1 : 1;
-      typed.textContent = word.slice(0, c);
-      let delay = del ? 45 : 90;
-      if (!del && c === word.length) { del = true; delay = 1400; }
-      else if (del && c === 0) { del = false; w = (w + 1) % words.length; delay = 350; }
-      setTimeout(tick, delay);
-    })();
-  }
-
-  // Scroll reveal, skill bars, counters
-  const count = el => {
-    const to = +el.dataset.to;
-    if (reduce) { el.textContent = to; return; }
-    const t0 = performance.now(), dur = 1200;
-    (function step(t) {
-      const p = Math.min((t - t0) / dur, 1);
-      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) requestAnimationFrame(step);
-    })(t0);
-  };
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (!en.isIntersecting) return;
-      const el = en.target;
-      el.classList.add('in');
-      $$('.bar i', el).forEach(b => b.style.width = b.dataset.w + '%');
-      $$('.count', el).forEach(count);
-      io.unobserve(el);
-    });
-  }, { threshold: .15 });
-  $$('.reveal').forEach(el => io.observe(el));
-
-  // Active nav link + back-to-top + header state
-  const links = $$('.menu a'), top = $('#top');
-  const secs = links.map(a => $(a.getAttribute('href')));
-  const spy = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (!en.isIntersecting) return;
-      links.forEach(a => {
-        const on = a.getAttribute('href') === '#' + en.target.id;
-        a.classList.toggle('active', on);
-        on ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current');
-      });
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  secs.forEach(s => s && spy.observe(s));
-  addEventListener('scroll', () => top.classList.toggle('show', scrollY > 600), { passive: true });
-  top.addEventListener('click', () => scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }));
-
-  // Project filter
-  const chips = $$('.chip'), cards = $$('#grid .card');
-  chips.forEach(chip => chip.addEventListener('click', () => {
-    chips.forEach(c => { c.classList.toggle('on', c === chip); c.setAttribute('aria-pressed', c === chip); });
-    cards.forEach(card => card.classList.toggle('hide', chip.dataset.f !== 'all' && card.dataset.c !== chip.dataset.f));
-  }));
-
-
-
-  // Network background (fits the IT theme); pauses off-screen
-  const cv = $('#net'), ctx = cv.getContext('2d'), hero = $('#home');
-  let nodes = [], vis = true, mouse = { x: -999, y: -999 };
-  const size = () => {
-    const r = hero.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
-    cv.width = r.width * dpr; cv.height = r.height * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const n = Math.min(70, Math.round(r.width * r.height / 16000));
-    nodes = Array.from({ length: n }, () => ({
-      x: Math.random() * r.width, y: Math.random() * r.height,
-      vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35
-    }));
-  };
-  const draw = () => {
-    const w = cv.clientWidth, h = cv.clientHeight;
-    const col = getComputedStyle(root).getPropertyValue('--accent').trim();
-    ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = ctx.strokeStyle = col;
-    nodes.forEach((a, i) => {
-      if (!reduce) {
-        a.x += a.vx; a.y += a.vy;
-        if (a.x < 0 || a.x > w) a.vx *= -1;
-        if (a.y < 0 || a.y > h) a.vy *= -1;
-      }
-      ctx.globalAlpha = .55; ctx.beginPath(); ctx.arc(a.x, a.y, 2, 0, 6.3); ctx.fill();
-      for (let j = i + 1; j < nodes.length; j++) {
-        const b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < 130) { ctx.globalAlpha = (1 - d / 130) * .35; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
-      }
-      const m = Math.hypot(a.x - mouse.x, a.y - mouse.y);
-      if (m < 170) { ctx.globalAlpha = (1 - m / 170) * .6; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke(); }
-    });
-    ctx.globalAlpha = 1;
-  };
-  const loop = () => { if (vis) draw(); if (!reduce) requestAnimationFrame(loop); };
-  size(); loop(); if (reduce) draw();
-  addEventListener('resize', () => { size(); if (reduce) draw(); });
-  new IntersectionObserver(e => { vis = e[0].isIntersecting; }).observe(hero);
-  hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); mouse = { x: e.clientX - r.left, y: e.clientY - r.top }; });
-  hero.addEventListener('pointerleave', () => { mouse = { x: -999, y: -999 }; });
-
-  // CV: print-friendly layout, choose "Save as PDF" in the print window
-  $('#cv').addEventListener('click', () => print());
-
-  // Scroll progress bar
-  const prog = $('#progress');
-  addEventListener('scroll', () => {
-    const max = document.documentElement.scrollHeight - innerHeight;
-    prog.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
-  }, { passive: true });
-
-  // Card spotlight follows the pointer
-  cards.forEach(c => c.addEventListener('pointermove', e => {
-    const r = c.getBoundingClientRect();
-    c.style.setProperty('--mx', e.clientX - r.left + 'px');
-    c.style.setProperty('--my', e.clientY - r.top + 'px');
-  }));
-
-  // Project details dialog
-  const modal = $('#modal'), mBody = $('#m-body');
-  const extra = [
-    ['Designed the layout, wrote all CSS and JavaScript, and tested it on phone, tablet and desktop.', 'Dark/light themes', 'Typing and scroll animations', 'Validated contact form'],
-    ['Designed the tables, wrote the PHP pages and built search and report screens.', 'Student profiles and grades', 'Enrollment tracking', 'Search and print reports'],
-    ['Built the interface and logic in plain JavaScript with no libraries.', 'Add, edit, complete tasks', 'Filter by status', 'Saved in the browser'],
-    ['Mapped the room, ran the cabling and configured addressing and sharing.', 'IP addressing plan', 'Shared printer', 'Basic troubleshooting guide'],
-    ['Modeled products and suppliers and wrote queries for daily use.', 'Normalized schema', 'Low-stock alert query', 'Backup routine'],
-    ['Built the form, validated input on the server and saved records safely.', 'Required-field checks', 'Prepared statements', 'Confirmation page']
-  ];
-  cards.forEach((card, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'btn ghost'; btn.type = 'button'; btn.textContent = 'Details';
-    $('.btns', card).appendChild(btn);
-    btn.addEventListener('click', () => {
-      const [intro, ...pts] = extra[i];
-      mBody.innerHTML = '';
-      const img = $('img', card).cloneNode();
-      const box = document.createElement('div'); box.className = 'pad';
-      box.innerHTML = '<h3 id="m-title"></h3><p></p><h4>What I did</h4><p class="intro"></p><h4>Features</h4><ul class="list"></ul>';
-      $('h3', box).textContent = $('h3', card).textContent;
-      $('p', box).textContent = $('p', card).textContent;
-      $('.intro', box).textContent = intro;
-      pts.forEach(t => { const li = document.createElement('li'); li.textContent = t; $('.list', box).appendChild(li); });
-      mBody.append(img, box);
-      modal.showModal();
-    });
-  });
-  $('#m-close').addEventListener('click', () => modal.close());
-  modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
-
-  // Contact form validation
-  const form = $('#form'), toast = $('#toast');
-  const rules = {
-    name: v => v.trim().length >= 2 || 'Enter your name (at least 2 characters).',
-    email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Enter a valid email address, like name@example.com.',
-    subject: v => v.trim().length >= 3 || 'Enter a subject (at least 3 characters).',
-    message: v => v.trim().length >= 10 || 'Write a message of at least 10 characters.'
-  };
-  const check = f => {
-    const res = rules[f.name](f.value), ok = res === true;
-    f.classList.toggle('invalid', !ok);
-    f.setAttribute('aria-invalid', !ok);
-    $('#e-' + f.name).textContent = ok ? '' : res;
-    return ok;
-  };
-  const fields = $$('input, textarea', form);
-  fields.forEach(f => f.addEventListener('blur', () => check(f)));
-  fields.forEach(f => f.addEventListener('input', () => f.classList.contains('invalid') && check(f)));
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const bad = fields.filter(f => !check(f));
-    if (bad.length) { bad[0].focus(); return; }
-    const d = Object.fromEntries(new FormData(form));
-    location.href = 'mailto:daironporin360@gmail.com?subject=' + encodeURIComponent(d.subject) +
-      '&body=' + encodeURIComponent(d.message + '\n\nFrom: ' + d.name + ' (' + d.email + ')');
-    form.reset();
-    toast.textContent = 'Opening your email app. Press send there to deliver your message.';
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 5000);
-  });
-})();
-</script>
-</body>
-</html>
